@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPC.Server.Protos";
+
+service MeterReadingService{
+	rpc AddReading (ReadingMessage) returns (StatusMessage);
+}
+
+message ReadingMessage{
+	int32 custId = 1;
+	int32 reading = 2;
+}
+
+message StatusMessage{
+	bool success = 1;
+}
